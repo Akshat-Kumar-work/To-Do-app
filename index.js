@@ -1,10 +1,31 @@
-
-//express imported 
+//express framework ko instance lia hai
 const express = require("express");
+//server create kia hai
+const server = express();
 
-//server created
-const app = express();
+//putting everything present in .env file into processes object
+require("dotenv").config()
+//YA TOH PORT process sy ayga agar nahi aya toh 4000 port use karo
+const PORT = process.env.PORT || 4000;
 
-app.listen( 3000 , ()=>{
-    console.log("app is running ")
+//middleware to parse json request body
+server.use(express.json());
+
+//import routes for TODO API
+const todoRoutes = require("./routes/todos")
+//mount the todo api routes
+server.use("/api/v1",todoRoutes); 
+
+//start server
+server.listen(PORT , ()=>{
+    console.log("server started")
+})
+
+//connecting to db
+const dbconnect = require("./config/database")
+dbconnect()
+
+//default route
+server.get("/" , (req ,res)=>{
+    res.send("this is home page")
 })

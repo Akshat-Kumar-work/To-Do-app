@@ -2,6 +2,7 @@
 
 const mongoose = require("mongoose");
 
+//putting everything in processes object 
 require("dotenv").config()
 
 // function to connect the database with the server
