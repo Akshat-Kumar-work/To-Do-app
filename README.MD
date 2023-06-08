@@ -1,7 +1,7 @@
-<h1> structure of app <h1>
+<h1> structure of app </h1>
 
 
-<h2> .env file <h2> 
+<h2> .env file </h2> 
 
 <p>
 it contain the basic credentials like data-base url and port number
@@ -26,7 +26,7 @@ this folder contain the database.js file , in which the connection of database w
 
 
 
-<h2> models folder <h2>
+<h2> models folder </h2>
 
 it contain the schema's of the data or properties of data
 
