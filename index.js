@@ -21,7 +21,7 @@ server.listen(PORT , ()=>{
     console.log("server started")
 })
 
-//connecting to db
+//connecting to db , by importing database function which connect the server with database
 const dbconnect = require("./config/database")
 dbconnect()
 
