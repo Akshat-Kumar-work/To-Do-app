@@ -1,3 +1,4 @@
+//in this file the connection of datbase and server is done
 
 
 const mongoose = require("mongoose");

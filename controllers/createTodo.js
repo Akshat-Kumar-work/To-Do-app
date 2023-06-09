@@ -7,11 +7,12 @@ const Todo = require("../models/todo");
 //createTodo naam ka async function hai request and response parameters k sath , aur export bhi kar rhe hai
 exports.createTodo = async(req , res) =>{
 try{
-    //extract title and description from request body
+    //extract title and description from request body, title or description request ki body se nikal rhe hai 
     const {title , description} = req.body;
-    //create a new todo obj and insert in db  
+    //create a new todo obj using the todo scheme present in models folder and insert in db 
+    //response variable m ,naya object bnaya todo schema ki help se, title or description ki value daldi
     const response = await Todo.create({title , description});
-    //send a json response with success flag
+    //send a json response with success flag, response m data k andar response variable daldia jisme tile or description hai
     res.status(200).json(
         {
             success:true,
@@ -22,8 +23,7 @@ try{
 }
 catch(error){
     console.log(error);
-    res.status(500)
-    .json({
+    res.status(500).json({
         success:false,
         data:"internal server error",
         message:error.message
