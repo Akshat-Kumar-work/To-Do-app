@@ -10,9 +10,10 @@ try{
     //extract title and description from request body, title or description request ki body se nikal rhe hai 
     const {title , description} = req.body;
     //create a new todo obj using the todo scheme present in models folder and insert in db 
-    //response variable m ,naya object bnaya todo schema ki help se, title or description ki value daldi
+    //naya todo object create hora hai database m , with help of title and description aur usko fir response variable m daal ra hai
     const response = await Todo.create({title , description});
-    //send a json response with success flag, response m data k andar response variable daldia jisme tile or description hai
+    //response bhj rhe hai  with success flag, response m json value  k andar  data m response variable daldia jisme tile or description hai
+    // status 200 means successful request
     res.status(200).json(
         {
             success:true,

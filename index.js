@@ -25,7 +25,7 @@ server.listen(PORT , ()=>{
 const dbconnect = require("./config/database")
 dbconnect()
 
-//default route
+//default route , created direct without using router
 server.get("/" , (req ,res)=>{
     res.send("this is home page")
 })
