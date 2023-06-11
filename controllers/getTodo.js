@@ -31,8 +31,9 @@ const Todo = require("../models/todo");
     exports.getTodoById = async(req , res)=>{
     try{
         //extract todo item on basis of id
-        //jo request ayi hai uske parametres k andar jao aur id ko id variable m daldo
+        //jo request ayi hai uske parametres k andar jo id hai uski value id variable m daldo
         const id = req.params.id;
+        //using findbyid function to get the particular id data
         const todo = await Todo.findById( {_id: id})
 
         //if data not found

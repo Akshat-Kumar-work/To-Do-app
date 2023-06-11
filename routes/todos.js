@@ -9,6 +9,8 @@ const router = express.Router();
 const {createTodo} = require("../controllers/createTodo");
 //getTodo aur getTodoById ko import krdia controllers se
 const {getTodo,getTodoById}  = require("../controllers/getTodo");
+//importing the updateTodo route handler
+const {updateTodo} = require("../controllers/updateTodo");
 
 //defining api routes and mapping it to controller
 //simply it means aap kis path ko kis controller sy map karna chahty hai
@@ -17,13 +19,17 @@ const {getTodo,getTodoById}  = require("../controllers/getTodo");
 //but this is best practice to follow
 // here createTodo is route handler 
 
-//post route create a new data into the database , it call createTodo handler and get the response from it by which it create new data entry
+//post request route create a new data into the database , it call createTodo handler and get the response from it by which it create new data entry
 router.post("/createTodo",createTodo);
 
-//creating get route with getTodo route handler , passing path and route handler in it
+//creating get request route with getTodo route handler , passing path and route handler in it
 router.get("/getTodos",getTodo);
-//creating get route for single id by passing id with the route and route handler getTodoByid
+//creating get request route for single id by passing id with the route and route handler getTodoByid
 router.get("/getTodos/:id",getTodoById);
+
+//creating put request route with updateTodo route handler
+router.put("/updateTodo/:id",updateTodo);
+
 
 //exporting the router 
 module.exports = router;
