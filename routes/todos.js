@@ -12,7 +12,7 @@ const {getTodo,getTodoById}  = require("../controllers/getTodo");
 //importing the updateTodo route handler
 const {updateTodo} = require("../controllers/updateTodo");
 //importing the delete todo route handler
-const {delteTodo, deleteTodo} = require("../controllers/deleteTodo");
+const { deleteTodo} = require("../controllers/deleteTodo");
 
 //defining api routes and mapping it to controller
 //simply it means aap kis path ko kis controller sy map karna chahty hai
