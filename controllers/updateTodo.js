@@ -16,7 +16,7 @@ const Todo = require("../models/todo");
             //title , description aur updateAt ko y krdo
             {title,description,updateAt:Date.now()}
         )
-        
+
         //response m send kar rhe hai
         res.status(200).json({
             success:true,

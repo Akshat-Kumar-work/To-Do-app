@@ -11,6 +11,8 @@ const {createTodo} = require("../controllers/createTodo");
 const {getTodo,getTodoById}  = require("../controllers/getTodo");
 //importing the updateTodo route handler
 const {updateTodo} = require("../controllers/updateTodo");
+//importing the delete todo route handler
+const {delteTodo, deleteTodo} = require("../controllers/deleteTodo");
 
 //defining api routes and mapping it to controller
 //simply it means aap kis path ko kis controller sy map karna chahty hai
@@ -30,6 +32,8 @@ router.get("/getTodos/:id",getTodoById);
 //creating put request route with updateTodo route handler
 router.put("/updateTodo/:id",updateTodo);
 
+//creating delete request route with deleteTodo route handler
+router.delete("/deleteTodo/:id",deleteTodo);
 
 //exporting the router 
 module.exports = router;
