@@ -4,8 +4,9 @@ const Todo = require("../models/todo");
 
     exports.updateTodo = async(req ,res)=>{
     try{
-        //fetching id from request parameter by destructering
+        //fetching id from request parameter by destructuring
         const {id} = req.params;
+        //fetching title and description from request body
         const{title , description} = req.body;
         
         //Todo model par findByIdandupdate function laga dia jo id k base par find karega aur update krega
