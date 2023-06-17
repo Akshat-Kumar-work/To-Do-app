@@ -32,7 +32,7 @@ const Todo = require("../models/todo");
     try{
         //extract todo item on basis of id
         //jo request ayi hai uske parametres k andar jo id hai uski value id variable m daldo
-        const id = req.params.id;
+        const id = req.params.id; 
         //using findbyid function to get the particular id data
         const todo = await Todo.findById( {_id: id})
 
